@@ -5,16 +5,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class NSHomePO {
-  WebDriver driver;
-  WebDriverWait wait;
+public class NSHomePO extends PageObject {
 
   @FindBy(name = "departure")
   @CacheLookup
@@ -37,27 +32,17 @@ public class NSHomePO {
   @FindAll(@FindBy(xpath = "//input[@name='arrival']/following-sibling::div/ul/li"))
   private List<WebElement> suggestedArrivals;
 
-  public static WebElement filterDropdown(List<WebElement> collection, String item) {
-    return collection
-        .stream()
-        .filter(e -> e.getText().contains(item))  // Filters all items by text
-        .collect(Collectors.toList())  // Returns a list of matched items
-        .get(0); // Gets the first item of the matching list or
-                 // Throws ArrayIndexOutOfBounds exception when no match
+  public NSHomePO(WebDriver driver) {
+    super(driver);
   }
 
-  public NSHomePO(WebDriver driver) {
-    this.driver = driver;
-    // Wait a maximum of 2 seconds in this page
-    this.wait = new WebDriverWait(this.driver, 2);
-
-    // This call sets the WebElement fields.
-    PageFactory.initElements(driver, this);
+  public NSHomePO(WebDriver driver, String url) {
+    super(driver, url);
   }
 
   public NSHomePO acceptCookies() {
     try {
-      this.wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
+      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
       if (!acceptCookiesDialogLink.isEmpty()) {
         acceptCookiesDialogLink.iterator().next().click();
       }

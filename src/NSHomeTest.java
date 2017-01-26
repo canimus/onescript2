@@ -15,7 +15,7 @@ public class NSHomeTest {
     // TODO: This is another element that requires driver to be a parameter
     driver = new ChromeDriver();
 
-    // FIXME: This needs to be the starting point for a page object
+    // TODO: This needs to be the starting point for a page object
     driver.navigate().to("http://www.ns.nl");
   }
 

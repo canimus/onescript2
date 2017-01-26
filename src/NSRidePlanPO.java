@@ -8,9 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class NSRidePlanPO {
-  WebDriver driver;
-  WebDriverWait wait;
+public class NSRidePlanPO extends PageObject {
 
   @FindAll({
       @FindBy(xpath = "//ol[@class='rp-reismogelijkhedenList']/li")
@@ -19,9 +17,7 @@ public class NSRidePlanPO {
 
 
   public NSRidePlanPO(WebDriver driver) {
-    this.driver = driver;
-    PageFactory.initElements(driver, this);
-    this.wait = new WebDriverWait(this.driver, 2);
+    super(driver);
     this.wait.until(ExpectedConditions.visibilityOfAllElements(resultList));
   }
 }
