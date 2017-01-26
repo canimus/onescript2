@@ -1,10 +1,3 @@
-/**
- * Author: Herminio Vazquez
- * Date: January 25, 2017
- * Project: ING Mortgages
- * Company: http://iovio.com
- */
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
