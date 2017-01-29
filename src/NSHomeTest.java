@@ -23,7 +23,7 @@ public class NSHomeTest {
 
       NSHomePO page = new NSHomePO(driver, "http://www.ns.nl");
       page.planRide("Utrecht", "Schiphol");
-      assertThat(driver.getTitle()).contains("Reis").as("Matching title");
+      assertThat(driver.getTitle()).contains("Reisplanner | Reisinformatie | NS").as("Matching title");
     } catch(Exception e) {
       System.out.println("Error: " + e.toString());
       e.printStackTrace();
