@@ -9,11 +9,14 @@ public class JedisTest {
     jedis.set("name", "Herminio");
     String value = jedis.get("name");
     System.out.println("Value: " + value);
+    jedis.del("name");
 
     // Working with lists
     jedis.lpush("accountNumbers", "001", "002", "003");
-    System.out.println(jedis.lpop("accountNumbers"));
-    System.out.println(jedis.lpop("accountNumbers"));
+    System.out.println(jedis.rpop("accountNumbers"));
+    System.out.println(jedis.rpop("accountNumbers"));
+    System.out.println(jedis.rpop("accountNumbers"));
+    jedis.del("accountNumbers");
 
     // Working with sets
     jedis.sadd("sofinumber", "1001", "1002","1003");
@@ -22,6 +25,7 @@ public class JedisTest {
     System.out.println(jedis.smembers("sofinumber"));
 
     System.out.println(jedis.sismember("sofinumber", "1002"));
+    jedis.del("sofinumber");
 
   }
 }
