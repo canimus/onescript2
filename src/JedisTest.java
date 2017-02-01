@@ -16,6 +16,7 @@ public class JedisTest {
     System.out.println(jedis.rpop("accountNumbers"));
     System.out.println(jedis.rpop("accountNumbers"));
     System.out.println(jedis.rpop("accountNumbers"));
+
     jedis.del("accountNumbers");
 
     // Working with sets
@@ -26,6 +27,5 @@ public class JedisTest {
 
     System.out.println(jedis.sismember("sofinumber", "1002"));
     jedis.del("sofinumber");
-
   }
 }

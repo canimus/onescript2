@@ -1,17 +1,13 @@
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.Text;
-import org.jdom2.filter.Filters;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
-import org.jdom2.xpath.XPathFactory;
 
 import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
-
 
 /**
  * Created by hvazquez on 1/30/2017.
@@ -41,6 +37,5 @@ public class XMLWriteTest {
 
     XMLOutputter xout = new XMLOutputter(Format.getPrettyFormat());
     xout.output(document, System.out);
-
   }
 }
