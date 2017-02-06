@@ -5,6 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.List;
 
@@ -50,6 +51,8 @@ public class NSHomePO extends PageObject {
       // Return to main window and continue
       driver.switchTo().defaultContent();
     }
+
+
     return this;
   }
 
