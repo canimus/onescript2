@@ -22,11 +22,11 @@ public class PageObject {
   }
 
   public WebElement filterDropdown(List<WebElement> collection, String item) {
+    collection.forEach(System.out::println);
+
     return collection
         .stream()
-        .filter(e -> e.getText().contains(item))  // Filters list of items by text
-        .collect(Collectors.toList())  // Returns a list of matched items
-        .get(0); // Gets the first item of the matching list or
-    // Throws ArrayIndexOutOfBounds exception when no match
+        .filter(e -> e.getText().contains(item))
+        .findAny().orElse(null);
   }
 }

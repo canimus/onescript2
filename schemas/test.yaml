@@ -1,4 +1,13 @@
 OfferteAanvraag:
   Header:
+    VerzenderNrHDN: 317837
+    VerzenderNaam: ING
+    OntvangerNrHDN: 200006
+    Person:
+      Name: Herminio
+      Lastname: Vazquez
+      Address:
+        Street: Antonio Case
+        Number: 25
   HuidigObject:
-    HuidigeFinanciering:
+    CodeObject: 01 eengezinswoning
